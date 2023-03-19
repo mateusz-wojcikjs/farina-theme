@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     colors: { black: "#232323" },
+    container: {
+      center: true,
+      padding: '1rem'
+    },
     extend: {
       colors: {
         gold: {
@@ -17,7 +21,14 @@ module.exports = {
           solid: "#8C8C8C",
           light: "#E1E1E1"
         }
-      }
+      },
+      
+    spacing: {
+      '15':'4rem',
+    },
+    fontSize: {
+      xxs: '.625rem'
+    }
     }
   },
   plugins: []
