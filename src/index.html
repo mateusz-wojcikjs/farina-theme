@@ -7,16 +7,71 @@
   </head>
   <body>
     <nav
-      class="bg-sky-700 text-white hover:bg-sky-800 container px-4 py-2 sm:px-8 sm:py-3"
+      class="sticky top-0"
     >
-      a b c
+    <div class="container flex">
+      <div>
+        Nasze wyróżnienia
+      </div>
+      <div>Wine spectator 2019</div>
+      <div>Michelin 2019</div>
+      <div>Travellers choice 2019</div>
+      <a href="/">
+        <img alt="Farina logo" src="assets/logo.svg" />
+      </a>
+    </div>
     </nav>
-    <section class="py-16 md:py-28">
-      <div class="container">
-        <h2 class="text-3xl">Nasze wyróżnienia</h2>
-        <div class="flex">michelin</div>
+
+    <!-- Wines section -->
+
+    <section>
+      <div class="container flex">
+        <div class="flex basis-1/3">
+      Od lat podróżujemy do winnic w poszukiwaniu nowych bohaterów Farinowej karty. Jej autorem jest mój mąż, Juliusz Turasiewicz. Jula wino zawsze fascynowało, więc zdecydował się wesprzeć pasję wiedzą. Dziś jest profesjonalnym sommelierem z certyfikatem londyńskiej szkoły Wine & Spirit Education Trust. Zachęcamy do degustacji naszych wyborów - na butelki i na kieliszki. Niektóre etykiety są do spróbowania wyłącznie w Farinie – mamy na nie wyłączną dystrybucję w Polsce.
+
+        </div>        
+        <div class="basis-1/3">img 1</div>
+        <div class="basis-1/3">img 2</div>
       </div>
     </section>
+
+    <!-- CTA -->
+
+    <section class="py-16 md:py-32">
+      <div class="container">
+        <div class="flex flex-col md:flex-row md:items-center">
+          <div class="basis-1/2 mb-12"><img src="assets/thumbnail.png" alt="Miniatura filmu promocyjnego książki"></div>
+          <div class="basis-1/4 md:pl-8"><h2 class="text-3xl mb-4">KSIĄŻKA FARINA</h2><h3 class="text-gold-solid text-3xl mb-4">“Kuchnia Śródziemnomorska”</h3><p class="mb-4">To książka dla tych, którzy kochają świat. A w niej przepisy, przemyślenia i piękne fotografie z całego świata. Album, który zajmie najważniejsze miejsce w Twojej kuchni przy mące lub w salonie – do poczytania z kieliszkiem wina.</p>
+            <a class="px-4 py-3 bg-gradient-to-r from-gold-gradientFrom to-gold-gradientTo text-white uppercase border-gold-solid border hover:border-black hover:from-black hover:to-black duration-300 transition-all" href="/">Kup książkę</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA end -->
+
+    <!-- Banner -->
+    <div class="banner">
+      <img class="w-full max-h-[720px] object-cover" src="assets/full-w-bg.png" alt="Buraki tło">
+    </div>
+    <!-- Banner end -->
+    <!-- Awards section -->
+    <section class="py-8 md:py-28">
+      <div class="container flex justify-center">
+        <div class="flex flex-col md:flex-row justify-between lg:basis-5/6 md:items-center">
+
+        <div class="mb-10 md:mb-0">
+          <h2 class="text-3xl">Nasze wyróżnienia</h2>
+        </div>
+        <div class="flex gap-20">
+          <div class=""><img src="assets/wine.png" alt="Wine" /></div>
+          <div class=""><img src="assets/michelin.png" alt="michelin" /></div>
+          <div class=""><img src="assets/travellers.png" alt="travellers" /></div>
+        </div>
+      </div>
+
+      </div>
+    </section>
+    <!-- Award section end -->
     <!-- Contact section start -->
     <section class="py-16 md:py-32">
       <div

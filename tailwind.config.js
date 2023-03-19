@@ -11,7 +11,9 @@ module.exports = {
       colors: {
         gold: {
           solid: "#C5A674",
-          light: "#E7DECF"
+          light: "#E7DECF",
+          gradientFrom: "#B18C58",
+          gradientTo: "#E0CB9C",
         },
         blue: {
           solid: "#00497E",
@@ -20,7 +22,8 @@ module.exports = {
         grey: {
           solid: "#8C8C8C",
           light: "#E1E1E1"
-        }
+        },
+        white: "#fff"
       },
       
     spacing: {
