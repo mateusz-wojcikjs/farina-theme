@@ -3,46 +3,274 @@
   <head>
     <meta charset="UTF-8" />
     <link href="styles/main.scss" rel="stylesheet" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
     <title>Home page</title>
   </head>
   <body>
-    <nav
-      class="sticky top-0"
-    >
-    <div class="container flex">
-      <div>
-        Nasze wyróżnienia
+    <nav class="sticky top-0 z-50 bg-white">
+      <div
+        class="container flex h-[88px] items-center justify-between"
+      >
+        <div
+          class="after:content[''] relative flex w-[18.5rem] items-center gap-8 after:absolute after:left-1/2 after:h-full after:w-px after:bg-gold-solid"
+        >
+          <div class="basis-1/2">Nasze wyróżnienia</div>
+          <div class="flex basis-1/2 flex-col text-xxs">
+            <div>Wine spectator 2019</div>
+            <div>Michelin 2019</div>
+            <div>Travellers choice 2019</div>
+          </div>
+        </div>
+        <a href="/">
+          <img alt="Farina logo" src="assets/logo.svg" />
+        </a>
+        <div class="flex">
+          <div class="flex">
+            <a href="#pl">PL</a><a href="#EN">EN</a>
+          </div>
+          <button>MENU</button>
+          MENU
+        </div>
       </div>
-      <div>Wine spectator 2019</div>
-      <div>Michelin 2019</div>
-      <div>Travellers choice 2019</div>
-      <a href="/">
-        <img alt="Farina logo" src="assets/logo.svg" />
-      </a>
-    </div>
     </nav>
 
-    <!-- Wines section -->
+    <!--    Hero header -->
+    <header>
+      <img
+        alt=""
+        class="w-full object-cover"
+        src="assets/hero-frame.png"
+      />
+      <div class="pt-4">
+        <a class="button button--prmiary" href="/"
+          ><span>Zarezerwuj stolik</span></a
+        >
+      </div>
+    </header>
 
+    <!--    About section-->
     <section>
-      <div class="container flex">
-        <div class="flex basis-1/3">
-      Od lat podróżujemy do winnic w poszukiwaniu nowych bohaterów Farinowej karty. Jej autorem jest mój mąż, Juliusz Turasiewicz. Jula wino zawsze fascynowało, więc zdecydował się wesprzeć pasję wiedzą. Dziś jest profesjonalnym sommelierem z certyfikatem londyńskiej szkoły Wine & Spirit Education Trust. Zachęcamy do degustacji naszych wyborów - na butelki i na kieliszki. Niektóre etykiety są do spróbowania wyłącznie w Farinie – mamy na nie wyłączną dystrybucję w Polsce.
+      <div class="container pt-20 md:py-32">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between"
+        >
+          <div class="mb-12 basis-7/12 md:mb-0">
+            <img alt="" class="w-full" src="assets/img1.png" />
+          </div>
+          <div class="basis-1/3">
+            <div class="mb-4 mr-12">
+              <h4 class="mb-4 text-3xl">Drodzy Goście!</h4>
+              <p>
+                Sztuka gościnności jest moją pasją i rodzinną
+                tradycją.
+                <b
+                  >Od ponad 18 lat staramy się z całym zespołem, by
+                  Farina była kwintesencją Krakowa</b
+                >, miasta kosmopolitycznego, łączącego tradycję z
+                nowoczesnością, jednocześnie przepełnionego
+                niepowtarzalnym, domowym urokiem. Idea Fariny i jej
+                menu to nasze wyobrażenie o prostej, dobrej kuchni;
+                świeżej, lekkiej, aromatycznej, inspirowanej podróżami
+                i nowalijkami.
+                <br />
+                <br />
+                <br />
+                <b>Zapraszam do mojego kulinarnego świata!</b>
+              </p>
+            </div>
+            <a class="link" href="/"><span>CZYTAJ WIĘCEJ</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        </div>        
-        <div class="basis-1/3">img 1</div>
-        <div class="basis-1/3">img 2</div>
+    <!--    Menu section -->
+    <div
+      class="mt-12 mr-4 bg-cover bg-center bg-no-repeat py-40 md:mt-0 md:mr-0"
+      style="background-image: url('assets/background-menu.png')"
+    >
+      <div
+        class="container flex h-full pt-60 md:items-center md:justify-end md:pt-0"
+      >
+        <div
+          class="-mb-96 -ml-4 max-w-sm bg-white p-8 md:ml-0 md:mb-0 md:basis-1/3 md:p-16"
+        >
+          <div class="mb-4 mr-12">
+            <h4 class="mb-4 text-3xl">MENU</h4>
+            <p>
+              <b
+                >Ryby są podstawą menu Restauracji Farina, drugim -
+                obok mąki - elementem logo naszej restauracji.</b
+              >
+              Są zdrowe i można z nich wyczarować mnóstwo ciekawych
+              potraw. Wszystko, co serwujemy gościom, bazuje przede
+              wszystkim na dobrze dobranych, świeżych i najlepszej
+              jakości składnikach.
+            </p>
+          </div>
+          <a class="link" href="/"><span>ZOBACZ</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!--    Seasonal menu section-->
+    <section>
+      <div class="pt-64 pb-12 md:pt-24">
+        <div
+          class="relative flex flex-col md:flex-row md:items-center"
+        >
+          <div
+            class="mb-12 px-4 md:mb-0 md:basis-7/12 md:px-0 md:pr-8"
+          >
+            <img
+              alt=""
+              class="w-full md:max-w-[calc(50vw+8rem)]"
+              src="assets/season-menu-bg.png"
+            />
+          </div>
+          <div
+            class="container flex md:absolute md:left-1/2 md:-translate-x-1/2 md:justify-end"
+          >
+            <div class="md:basis-1/3">
+              <div class="mb-4 mr-12">
+                <h4 class="mb-4 text-3xl">MENU SEZONOWE</h4>
+                <p>
+                  Nowe i ciekawe propozycje inspirowane głównie
+                  nowalijkami oferujemy w formie Sezonowego Menu,
+                  które raz w miesiącu zmieniamy prawie całkowicie. A
+                  w nim – specjały z Polski i najdalszych zakątków
+                  Europy, podając na przykład szparagi wiosną i
+                  aromatyczne trufle zimą.
+                </p>
+              </div>
+              <a class="link" href="/"><span>ZOBACZ</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--    Cocktails menu section-->
+    <section>
+      <div class="pb-24 pt-6 md:pt-12">
+        <div
+          class="relative flex flex-col md:flex-row-reverse md:items-center"
+        >
+          <div
+            class="mb-12 px-4 md:mb-0 md:basis-7/12 md:px-0 md:pl-8"
+          >
+            <img
+              alt=""
+              class="w-full max-w-full"
+              src="assets/cocktails-bg.png"
+            />
+          </div>
+          <div
+            class="container flex md:absolute md:left-1/2 md:-translate-x-1/2"
+          >
+            <div class="md:basis-1/3">
+              <div class="mb-4 mr-12">
+                <h4 class="mb-4 text-3xl">KARTA KOKTAILI</h4>
+                <p>
+                  Rozmach jest solą życia, bez niego trudno cokolwiek
+                  osiągnąć. A sukcesy zawsze warto celebrować – oprócz
+                  wybitnej karty win w menu Fariny znajduje się karta
+                  koktajli. A w przystawkach – wódka z ostrygą.
+                  Efektowny shot, dodający animuszu nawet tym, którzy
+                  boją się ostryg.
+                </p>
+              </div>
+              <a class="link" href="/"><span>ZOBACZ</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wines section -->
+    <section>
+      <div
+        class="container flex flex-col-reverse items-center gap-8 md:flex-row"
+      >
+        <div
+          class="z-10 -mt-80 -ml-12 max-w-sm bg-white md:ml-0 md:mt-0 md:max-w-full md:basis-1/3 md:bg-none"
+        >
+          <div class="mb-4 mr-12 p-8">
+            <h4 class="mb-4 text-3xl">NASZE WINA</h4>
+            <p>
+              Od lat podróżujemy do winnic w poszukiwaniu nowych
+              bohaterów Farinowej karty. Jej autorem jest mój mąż,
+              Juliusz Turasiewicz. Jula wino zawsze fascynowało, więc
+              zdecydował się wesprzeć pasję wiedzą.
+              <b
+                >Dziś jest profesjonalnym sommelierem z certyfikatem
+                londyńskiej szkoły Wine & Spirit Education Trust.</b
+              >
+              Zachęcamy do degustacji naszych wyborów - na butelki i
+              na kieliszki. Niektóre etykiety są do spróbowania
+              wyłącznie w Farinie – mamy na nie wyłączną dystrybucję w
+              Polsce.
+            </p>
+          </div>
+          <a class="link" href="/"><span>ZOBACZ KARTĘ WIN</span></a>
+        </div>
+        <div class="w-full md:w-auto md:basis-1/3">
+          <div class="relative overflow-hidden">
+            <div class="mask">
+              <div
+                class="absolute bottom-48 left-1/2 -translate-x-1/2 text-white"
+              >
+                Juliusz Turasiewicz
+              </div>
+            </div>
+            <img
+              alt="Juliusz Turasiewicz"
+              class="w-full"
+              src="assets/wina1.png"
+            />
+          </div>
+        </div>
+        <div class="hidden basis-1/3 md:block">
+          <img
+            alt="Butelki win"
+            class="w-full"
+            src="assets/wina2.png"
+          />
+        </div>
       </div>
     </section>
 
     <!-- CTA -->
-
     <section class="py-16 md:py-32">
       <div class="container">
-        <div class="flex flex-col md:flex-row md:items-center">
-          <div class="basis-1/2 mb-12"><img src="assets/thumbnail.png" alt="Miniatura filmu promocyjnego książki"></div>
-          <div class="basis-1/4 md:pl-8"><h2 class="text-3xl mb-4">KSIĄŻKA FARINA</h2><h3 class="text-gold-solid text-3xl mb-4">“Kuchnia Śródziemnomorska”</h3><p class="mb-4">To książka dla tych, którzy kochają świat. A w niej przepisy, przemyślenia i piękne fotografie z całego świata. Album, który zajmie najważniejsze miejsce w Twojej kuchni przy mące lub w salonie – do poczytania z kieliszkiem wina.</p>
-            <a class="px-4 py-3 bg-gradient-to-r from-gold-gradientFrom to-gold-gradientTo text-white uppercase border-gold-solid border hover:border-black hover:from-black hover:to-black duration-300 transition-all" href="/">Kup książkę</a>
+        <div class="mb-12 flex flex-col md:flex-row md:items-center">
+          <div class="basis-1/2">
+            <img
+              alt="Miniatura filmu promocyjnego książki"
+              class="w-full"
+              src="assets/thumbnail.png"
+            />
+          </div>
+          <div class="basis-1/4 md:pl-8">
+            <h2 class="mb-4 text-3xl">KSIĄŻKA FARINA</h2>
+            <h3 class="mb-4 text-3xl text-gold-solid">
+              “Kuchnia Śródziemnomorska”
+            </h3>
+            <p class="mb-4">
+              To książka dla tych, którzy kochają świat. A w niej
+              przepisy, przemyślenia i piękne fotografie z całego
+              świata. Album, który zajmie najważniejsze miejsce w
+              Twojej kuchni przy mące lub w salonie – do poczytania z
+              kieliszkiem wina.
+            </p>
+            <div class="pt-4">
+              <a class="button button--to-black" href="/"
+                ><span>Kup książkę</span></a
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -51,40 +279,50 @@
 
     <!-- Banner -->
     <div class="banner">
-      <img class="w-full max-h-[720px] object-cover" src="assets/full-w-bg.png" alt="Buraki tło">
+      <img
+        alt="Buraki tło"
+        class="max-h-[720px] w-full object-cover"
+        src="assets/full-w-bg.png"
+      />
     </div>
-    <!-- Banner end -->
+
     <!-- Awards section -->
     <section class="py-8 md:py-28">
       <div class="container flex justify-center">
-        <div class="flex flex-col md:flex-row justify-between lg:basis-5/6 md:items-center">
-
-        <div class="mb-10 md:mb-0">
-          <h2 class="text-3xl">Nasze wyróżnienia</h2>
+        <div
+          class="flex flex-col justify-between md:flex-row md:items-center lg:basis-5/6"
+        >
+          <div class="mb-10 md:mb-0">
+            <h2 class="text-3xl">Nasze wyróżnienia</h2>
+          </div>
+          <div class="flex gap-20">
+            <div class="">
+              <img alt="Wine" src="assets/wine.png" />
+            </div>
+            <div class="">
+              <img alt="michelin" src="assets/michelin.png" />
+            </div>
+            <div class="">
+              <img alt="travellers" src="assets/travellers.png" />
+            </div>
+          </div>
         </div>
-        <div class="flex gap-20">
-          <div class=""><img src="assets/wine.png" alt="Wine" /></div>
-          <div class=""><img src="assets/michelin.png" alt="michelin" /></div>
-          <div class=""><img src="assets/travellers.png" alt="travellers" /></div>
-        </div>
-      </div>
-
       </div>
     </section>
-    <!-- Award section end -->
+
     <!-- Contact section start -->
     <section class="py-16 md:py-32">
       <div
         class="container flex flex-col-reverse justify-between gap-8 md:flex-row md:items-center"
       >
-        <div class="lg:basis-6/12">
+        <div class="lg:basis-7/12">
           <img
             alt="okna restauracji"
             class="w-full"
             src="assets/img-contact.png"
           />
         </div>
-        <div class="lg:basis-4/12">
+        <div class="lg:basis-1/3">
           <h2 class="text-3xl">Kontakt</h2>
           <address class="my-6">
             <p>ul. św. Marka 16 (róg św. Jana)</p>
@@ -104,7 +342,6 @@
         </div>
       </div>
     </section>
-    <!-- Contact section end -->
 
     <!--    footer start-->
     <footer class="pt-8 md:pt-15">
@@ -259,7 +496,6 @@
         </div>
       </div>
     </footer>
-    <!--  footer end-->
   </body>
   <script src="scripts/main.js"></script>
 </html>
