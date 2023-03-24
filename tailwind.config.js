@@ -5,7 +5,7 @@ module.exports = {
     colors: { black: "#232323" },
     container: {
       center: true,
-      padding: '1rem'
+      padding: "1rem"
     },
     extend: {
       colors: {
@@ -13,7 +13,7 @@ module.exports = {
           solid: "#C5A674",
           light: "#E7DECF",
           gradientFrom: "#B18C58",
-          gradientTo: "#E0CB9C",
+          gradientTo: "#E0CB9C"
         },
         blue: {
           solid: "#00497E",
@@ -23,15 +23,19 @@ module.exports = {
           solid: "#8C8C8C",
           light: "#E1E1E1"
         },
+        gradient: {
+          from: "rgba(0, 0, 0, 0.8)",
+          to: "rgba(0, 0, 0, 0)"
+        },
         white: "#fff"
       },
-      
-    spacing: {
-      '15':'4rem',
-    },
-    fontSize: {
-      xxs: '.625rem'
-    }
+
+      spacing: {
+        15: "4rem"
+      },
+      fontSize: {
+        xxs: ".625rem"
+      }
     }
   },
   plugins: []

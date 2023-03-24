@@ -1,0 +1,129 @@
+.mask {
+  position: absolute;
+  height: calc(100px + 100%);
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 65%
+  );
+  transition: transform 300ms ease;
+  z-index: 2;
+
+  &:hover {
+    transform: translateY(-100px);
+  }
+}
+
+.overlay {
+  @apply after:absolute after:top-0 after:h-full after:w-full  after:content-[''];
+  &:after {
+    background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.25) 0%,
+        rgba(0, 0, 0, 0) 25%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.25) 0%,
+        rgba(0, 0, 0, 0) 25%
+      );
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  transform: translateY(20px);
+
+  &-300 {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(20px);
+    transition-delay: 300ms;
+  }
+
+  &-600 {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(20px);
+    transition-delay: 600ms;
+  }
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s ease-in-out;
+}
+
+.reveal-show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.bounce {
+  animation: bounce 2s ease infinite;
+
+  &:hover {
+    animation: notexistent;
+  }
+}
+
+.animate__animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.animate__fadeIn {
+  animation-name: fadeIn;
+}
+
+.animate__fadeOut {
+  animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+@keyframes bounce {
+  70% {
+    transform: translateY(0%);
+  }
+  75% {
+    transform: translateY(-25%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

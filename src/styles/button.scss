@@ -3,8 +3,8 @@
   position: relative;
   transition: border-color ease 300ms, color ease 300ms;
 
-  &--prmiary {
-    @apply hover:text-gold-solid;
+  &--primary {
+    @apply hover:bg-white hover:text-gold-solid;
   }
 
   &--to-black {
@@ -35,7 +35,7 @@
 }
 
 .link {
-  @apply relative ml-10 block text-gold-solid transition-all duration-300;
+  @apply relative ml-10 block inline-block text-gold-solid transition-all duration-300;
 
   &:after {
     @apply absolute -left-10 h-px w-8 bg-gold-solid transition-all duration-300;
@@ -58,26 +58,5 @@
     &:after {
       @apply w-12 bg-black;
     }
-  }
-}
-
-.mask {
-  position: absolute;
-  height: calc(100px + 100%);
-  width: 100%;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0) 65%
-  );
-  transition: transform 300ms ease;
-  z-index: 2;
-
-  &:hover {
-    transform: translateY(-100px);
-
-    //&:before {
-    //  opacity: 1;
-    //}
   }
 }
