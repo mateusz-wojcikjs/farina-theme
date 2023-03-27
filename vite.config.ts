@@ -12,6 +12,20 @@ const generateHtmlEntries = () => {
 
   return entries;
 };
+const generateJsEntries = () => {
+  const entries = {};
+  globSync("**/*.js", { cwd: "src" }).forEach((file) => {
+    const name = file.replace(/\.js$/, "");
+    entries[name] = resolve(__dirname, "src", file);
+  });
+
+  return entries;
+};
+
+const entries = {
+  ...generateJsEntries(),
+  ...generateHtmlEntries()
+};
 
 export default defineConfig({
   root: join(__dirname, "src"),
@@ -20,11 +34,13 @@ export default defineConfig({
     emptyOutDir: true,
     minify: "esbuild",
     rollupOptions: {
-      input: generateHtmlEntries(),
+      // input: generateHtmlEntries(),
+      input: entries,
       output: {
         entryFileNames: "[name].[hash].js",
         chunkFileNames: "[name].[hash].js"
-      }
+      },
+      plugins: []
     }
   },
   optimizeDeps: {
