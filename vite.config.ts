@@ -34,12 +34,7 @@ export default defineConfig({
     emptyOutDir: true,
     minify: "esbuild",
     rollupOptions: {
-      // input: generateHtmlEntries(),
       input: entries,
-      output: {
-        entryFileNames: "[name].[hash].js",
-        chunkFileNames: "[name].[hash].js"
-      },
       plugins: []
     }
   },
