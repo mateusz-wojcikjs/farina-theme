@@ -15,6 +15,17 @@
   }
 }
 
+.separator-line {
+  height: 1px;
+  width: 32px;
+  margin: 1.5rem 0;
+  @apply bg-gradient-to-r from-gold-gradientFrom to-gold-gradientTo;
+}
+
+.lazy-video {
+  //display: none;
+}
+
 .overlay {
   @apply after:absolute after:top-0 after:h-full after:w-full  after:content-[''];
   &:after {
@@ -33,6 +44,74 @@
         rgba(0, 0, 0, 0.25) 0%,
         rgba(0, 0, 0, 0) 25%
       );
+  }
+}
+
+.close-button {
+  width: 24px;
+  height: 24px;
+
+  .bar {
+    @apply bg-black;
+    width: 100%;
+    padding: 0;
+    height: 2px;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+
+    &:first-child {
+      transform: rotate(45deg);
+    }
+
+    &:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.loader-active {
+  &.loader {
+    @apply visible opacity-100;
+  }
+}
+
+.loader {
+  @apply invisible fixed left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black/50 opacity-0 transition-all duration-500;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  @apply border-t-4 border-t-black;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.spinner::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  @apply border-l-4 border-l-gold-solid;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 

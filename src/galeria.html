@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="styles/main.scss" rel="stylesheet" />
+    <link href="styles/blueimp-gallery.min.css" rel="stylesheet" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <title>Home page</title>
+  </head>
+  <body>
+    <nav class="sticky top-0 z-50 z-10 bg-white" id="navigation">
+      <div
+        class="container flex h-[88px] flex-wrap items-center justify-between"
+      >
+        <div
+          class="after:content[''] relative order-3 flex w-[18.5rem] items-center gap-8 after:absolute after:left-1/2 after:hidden after:h-full after:w-px after:bg-gold-solid md:order-none md:after:block"
+        >
+          <div class="hidden basis-1/2 md:block">
+            Nasze wyróżnienia
+          </div>
+          <div
+            class="flex gap-0.5 text-xxs md:basis-1/2 md:flex-col md:gap-0"
+          >
+            <div>Wine spectator 2019</div>
+            <div>Michelin 2019</div>
+            <div>Travellers choice 2019</div>
+          </div>
+        </div>
+        <a class="order-1 md:order-none" href="/">
+          <img
+            alt="Farina logo"
+            class="sm:w-48"
+            src="assets/logo.svg"
+          />
+        </a>
+        <div
+          class="order-2 flex w-[18.5rem] basis-1/3 items-center justify-end sm:basis-1/2 md:order-none md:basis-0 lg:basis-[18.5rem]"
+        >
+          <div
+            class="after:content[''] relative hidden w-14 after:absolute after:left-[calc(50%-3px)] after:h-full after:w-px after:bg-gold-solid md:flex"
+          >
+            <a class="w-8" href="#pl">PL</a
+            ><a class="w-8 text-end" href="#EN">EN</a>
+          </div>
+          <button class="hamburger" id="hamburger">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+            <span class="bar bar4"></span>
+          </button>
+          <div class="menu" id="menu">
+            <div class="menu__container bg-white pt-4 pb-24 md:py-24">
+              <div
+                class="container flex flex-col items-start md:flex-row md:items-center"
+              >
+                <button
+                  class="button button--primary md:hidden"
+                  data-modal="open-modal"
+                >
+                  <span>Zarezerwuj stolik</span>
+                </button>
+
+                <ul class="mt-10 basis-1/2 text-[2rem] md:mt-0">
+                  <li><a href="/pani-monika.html">O nas</a></li>
+                  <li><a href="/menu.html">Menu sezonowe</a></li>
+                  <li><a href="/galeria.html">Galeria</a></li>
+                  <li><a href="/">Galeria</a></li>
+                  <li><a href="/">Menu sezonowe</a></li>
+                  <li><a href="/">Galeria</a></li>
+                  <li><a href="/">Menu sezonowe</a></li>
+                  <li><a href="/">Galeria</a></li>
+                </ul>
+
+                <div
+                  class="mr-8 hidden basis-1/2 flex-col items-center border border-gold-solid p-16 text-center md:flex xl:basis-1/3"
+                >
+                  <img
+                    alt="Farina logo w menu"
+                    class="mb-6"
+                    src="assets/separator.svg"
+                  />
+                  <div class="mb-6 text-xl">
+                    Wszystkich gości zapraszamy do naszej Restauracji
+                    FARINA. <br />
+                    Zachęcamy również do wcześniejszej rezerwacji
+                    stolika:
+                  </div>
+                  <button
+                    class="button button--primary"
+                    data-modal="open-modal"
+                  >
+                    <span>Zarezerwuj stolik</span>
+                  </button>
+                </div>
+
+                <div
+                  class="after:content[''] relative flex w-14 after:absolute after:left-[calc(50%-3px)] after:h-full after:w-px after:bg-gold-solid md:hidden"
+                >
+                  <a class="w-8" href="#pl">PL</a
+                  ><a class="w-8 text-end" href="#EN">EN</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          MENU
+        </div>
+      </div>
+    </nav>
+
+    <!--    Form modal -->
+    <div
+      class="fixed top-0 left-0 z-50 hidden h-full w-full bg-[#000] opacity-75"
+      id="modal-background"
+    ></div>
+
+    <div class="modal hidden transition-all" id="modal">
+      <div class="loader" id="loader">
+        <span class="spinner"></span>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center transition-all"
+        id="modal-form-container"
+      >
+        <h3 class="text-3xl font-bold">ZAREZERWUJ STOLIK</h3>
+        <img
+          alt="ozdobny separator"
+          class="my-6"
+          src="assets/separator.svg"
+        />
+
+        <form id="modal-form">
+          <div class="grid grid-cols-6 gap-y-6 gap-x-4">
+            <div class="col-span-2">
+              <label
+                class="text-gray-700 mb-2 block font-bold"
+                for="date"
+                >Data</label
+              >
+              <input
+                class="text-gray-700 focus:shadow-outline w-full border py-2 px-3 leading-tight focus:outline-none"
+                id="date"
+                placeholder="dd/mm/rrrr"
+                required
+                type="text"
+              />
+            </div>
+            <div class="col-span-2">
+              <label
+                class="text-gray-700 mb-2 block font-bold"
+                for="time"
+                >Godzina</label
+              >
+              <input
+                class="text-gray-700 focus:shadow-outline w-full border py-2 px-3 leading-tight focus:outline-none"
+                id="time"
+                placeholder="Podaj godzinę rezerwacji"
+                required
+                type="text"
+              />
+            </div>
+            <div class="col-span-2">
+              <label
+                class="text-gray-700 mb-2 block font-bold"
+                for="guests"
+                >Goście</label
+              >
+              <input
+                class="text-gray-700 focus:shadow-outline w-full border py-2 px-3 leading-tight focus:outline-none"
+                id="guests"
+                placeholder="Podaj ilość gości"
+                required
+                type="text"
+              />
+            </div>
+            <div class="col-span-full">
+              <label
+                class="text-gray-700 mb-2 block font-bold"
+                for="name"
+                >Imię / hasło rezerwacji</label
+              >
+              <input
+                class="text-gray-700 focus:shadow-outline w-full border py-2 px-3 leading-tight focus:outline-none"
+                id="name"
+                placeholder="Podaj imię i nazwisko lub hasło rezerwacji"
+                required
+                type="text"
+              />
+            </div>
+            <div class="col-span-3">
+              <label
+                class="text-gray-700 mb-2 block font-bold"
+                for="phone"
+                >Numer telefonu</label
+              >
+              <input
+                class="text-gray-700 focus:shadow-outline w-full border py-2 px-3 leading-tight focus:outline-none"
+                id="phone"
+                placeholder="Podaj numer telefonu"
+                required
+                type="text"
+              />
+            </div>
+            <div class="col-span-3">
+              <label
+                class="text-gray-700 mb-2 block font-bold"
+                for="email"
+                >E-mail</label
+              >
+              <input
+                class="text-gray-700 focus:shadow-outline w-full border py-2 px-3 leading-tight focus:outline-none"
+                id="email"
+                placeholder="Podaj adres email"
+                required
+                type="email"
+              />
+            </div>
+            <div class="col-span-full">
+              <label
+                class="text-gray-700 mb-2 block font-bold"
+                for="message"
+                >Dodatkowe uwagi</label
+              >
+              <textarea
+                class="text-gray-700 focus:shadow-outline w-full border py-2 px-3 leading-tight focus:outline-none"
+                id="message"
+                placeholder="Dodatkowe informacje do twojej rezerwacji"
+                rows="3"
+              ></textarea>
+            </div>
+            <div
+              class="col-span-2 col-start-3 justify-self-center pt-4"
+            >
+              <button
+                class="button button--primary"
+                id="submit-form"
+                type="submit"
+              >
+                <span>ZAREZERWUJ STOLIK</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--    Gallery -->
+    <section>
+      <div class="gallery">
+        <div class="gallery__tabs">
+          <button
+            class="gallery__tab gallery__tab--active"
+            data-gallery="all"
+          >
+            Wszystkie
+          </button>
+          <button class="gallery__tab" data-gallery="food">
+            Dania
+          </button>
+          <button class="gallery__tab" data-gallery="restaurants">
+            Wnętrze
+          </button>
+          <button class="gallery__tab" data-gallery="kitchen">
+            Kuchnia
+          </button>
+        </div>
+        <div class="gallery__container" id="gallery">
+          <a class="gallery__item" href="assets/gallery-1.png">
+            <img alt="" src="assets/gallery-1.png" />
+          </a>
+          <a
+            class="gallery__item"
+            data-tab="food"
+            href="assets/gallery-1.png"
+          >
+            <img alt="" src="assets/gallery-1.png" />
+          </a>
+          <a
+            class="gallery__item"
+            data-tab="restaurant"
+            href="assets/gallery-1.png"
+          >
+            <img alt="" src="assets/gallery-1.png" />
+          </a>
+          <a
+            class="gallery__item"
+            data-tab="restaurant"
+            href="assets/gallery-1.png"
+          >
+            <img alt="" src="assets/gallery-1.png" />
+          </a>
+          <a
+            class="gallery__item"
+            data-tab="restaurant"
+            href="assets/gallery-1.png"
+          >
+            <img alt="" src="assets/gallery-1.png" />
+          </a>
+          <a
+            class="gallery__item"
+            data-tab="kitchen"
+            href="assets/gallery-1.png"
+          >
+            <img alt="" src="assets/gallery-1.png" />
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-14 flex justify-center">
+        <a class="link" href="/"><span>WIĘCEJ ZDJĘĆ</span></a>
+      </div>
+    </section>
+    <!--  Gallery Lightbox-->
+    <div
+      aria-label="image gallery"
+      aria-modal="true"
+      class="blueimp-gallery blueimp-gallery-controls"
+      id="blueimp-gallery"
+      role="dialog"
+    >
+      <div aria-live="polite" class="slides"></div>
+      <h3 class="title"></h3>
+      <a
+        aria-controls="blueimp-gallery"
+        aria-keyshortcuts="ArrowLeft"
+        aria-label="previous slide"
+        class="prev"
+      ></a>
+      <a
+        aria-controls="blueimp-gallery"
+        aria-keyshortcuts="ArrowRight"
+        aria-label="next slide"
+        class="next"
+      ></a>
+      <a
+        aria-controls="blueimp-gallery"
+        aria-keyshortcuts="Escape"
+        aria-label="close"
+        class="close"
+      ></a>
+      <a
+        aria-controls="blueimp-gallery"
+        aria-keyshortcuts="Space"
+        aria-label="play slideshow"
+        aria-pressed="false"
+        class="play-pause"
+        role="button"
+      ></a>
+      <ol class="indicator"></ol>
+    </div>
+
+    <!--    footer start-->
+    <footer class="pt-8 md:pt-15">
+      <div class="container">
+        <div class="mb-5">
+          <a href="/">
+            <img alt="Farina logo" src="assets/logo.svg" />
+          </a>
+        </div>
+
+        <div class="mb-8 flex flex-col md:flex-row md:gap-3 lg:gap-6">
+          <div class="mb-6 flex-1 md:mb-0">
+            <address class="mb-6">
+              <p>ul. św. Marka 16 (róg św. Jana)</p>
+              <p>31-018 Kraków</p>
+            </address>
+            <p>tel: <a href="tel:+48519399474">+48 519 399 474</a></p>
+            <p>
+              <a
+                class="text-gold-solid underline transition-colors duration-300 hover:text-gold-light"
+                href="mailto:restauracja@farina.com.pl"
+                >restauracja@farina.com.pl</a
+              >
+            </p>
+          </div>
+          <div class="mb-6 flex-1 md:mb-0">
+            <h4 class="text-2xl">Zapraszamy</h4>
+            <div class="mt-6">
+              <p>poniedziałek: zamknięte</p>
+              <p>wtorek - niedziela: 13.00 - 23.00</p>
+            </div>
+          </div>
+          <div class="mb-6 flex-1 md:mb-0">
+            <h4 class="text-2xl">Bądź na bieżąco:</h4>
+            <div class="mt-6 flex gap-6">
+              <div>
+                <a
+                  class="group"
+                  href="https://instagram.com/"
+                  target="_blank"
+                >
+                  <svg
+                    class="fill-gold-solid transition-colors duration-300 group-hover:fill-gold-light"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 17.7383 21.3889 19.2135 20.3012 20.3012C19.2135 21.3889 17.7383 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 6.26174 2.61107 4.78649 3.69878 3.69878C4.78649 2.61107 6.26174 2 7.8 2ZM7.6 4C6.64522 4 5.72955 4.37928 5.05442 5.05442C4.37928 5.72955 4 6.64522 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4C17.3548 20 18.2705 19.6207 18.9456 18.9456C19.6207 18.2705 20 17.3548 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6ZM17.25 5.5C17.5815 5.5 17.8995 5.6317 18.1339 5.86612C18.3683 6.10054 18.5 6.41848 18.5 6.75C18.5 7.08152 18.3683 7.39946 18.1339 7.63388C17.8995 7.8683 17.5815 8 17.25 8C16.9185 8 16.6005 7.8683 16.3661 7.63388C16.1317 7.39946 16 7.08152 16 6.75C16 6.41848 16.1317 6.10054 16.3661 5.86612C16.6005 5.6317 16.9185 5.5 17.25 5.5ZM12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12C17 13.3261 16.4732 14.5979 15.5355 15.5355C14.5979 16.4732 13.3261 17 12 17C10.6739 17 9.40215 16.4732 8.46447 15.5355C7.52678 14.5979 7 13.3261 7 12C7 10.6739 7.52678 9.40215 8.46447 8.46447C9.40215 7.52678 10.6739 7 12 7ZM12 9C11.2044 9 10.4413 9.31607 9.87868 9.87868C9.31607 10.4413 9 11.2044 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.7956 15 13.5587 14.6839 14.1213 14.1213C14.6839 13.5587 15 12.7956 15 12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+
+              <div>
+                <a
+                  class="group"
+                  href="https://tripadvisor.com/"
+                  target="_blank"
+                >
+                  <svg
+                    class="fill-gold-solid transition-colors duration-300 group-hover:fill-gold-light"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.006 4.29505C9.336 4.29505 6.668 5.07905 4.361 6.64805H0L1.963 8.78305C1.06861 9.59792 0.441617 10.6643 0.1644 11.842C-0.112816 13.0198 -0.0272945 14.2539 0.409731 15.3821C0.846756 16.5104 1.61484 17.4801 2.61309 18.1638C3.61134 18.8475 4.79306 19.2133 6.003 19.213C7.51482 19.2144 8.97095 18.6426 10.078 17.613L12 19.705L13.922 17.615C15.0284 18.6435 16.4834 19.2145 17.994 19.213C19.585 19.213 21.1108 18.5812 22.2359 17.4564C23.3611 16.3316 23.9935 14.806 23.994 13.215C23.9949 12.3807 23.8213 11.5553 23.4843 10.7921C23.1472 10.0288 22.6543 9.34446 22.037 8.78305L24 6.64805H19.65C17.3962 5.11376 14.7325 4.29383 12.006 4.29505ZM12 6.25505C13.531 6.25505 15.063 6.55805 16.504 7.15805C13.943 8.13805 12 10.43 12 13.1C12 10.429 10.058 8.13805 7.496 7.15805C8.92314 6.56323 10.4539 6.25668 12 6.25605V6.25505ZM6.002 9.15705C6.53504 9.15705 7.06285 9.26203 7.55531 9.46602C8.04777 9.67 8.49523 9.96899 8.87215 10.3459C9.24906 10.7228 9.54804 11.1703 9.75203 11.6627C9.95601 12.1552 10.061 12.683 10.061 13.216C10.061 13.7491 9.95601 14.2769 9.75203 14.7694C9.54804 15.2618 9.24906 15.7093 8.87215 16.0862C8.49523 16.4631 8.04777 16.7621 7.55531 16.9661C7.06285 17.1701 6.53504 17.275 6.002 17.275C4.92549 17.275 3.89306 16.8474 3.13185 16.0862C2.37064 15.325 1.943 14.2926 1.943 13.216C1.943 12.1395 2.37064 11.1071 3.13185 10.3459C3.89306 9.58469 4.92549 9.15705 6.002 9.15705ZM17.994 9.15905C18.5268 9.15885 19.0545 9.2636 19.5469 9.46733C20.0392 9.67106 20.4866 9.96977 20.8635 10.3464C21.2404 10.723 21.5395 11.1702 21.7436 11.6624C21.9477 12.1546 22.0528 12.6822 22.053 13.215C22.0532 13.7479 21.9484 14.2755 21.7447 14.7679C21.541 15.2603 21.2423 15.7077 20.8656 16.0846C20.489 16.4615 20.0418 16.7605 19.5496 16.9646C19.0574 17.1687 18.5298 17.2738 17.997 17.274C16.9209 17.2744 15.8887 16.8473 15.1275 16.0867C14.3663 15.326 13.9384 14.2942 13.938 13.218C13.9376 12.1419 14.3647 11.1097 15.1254 10.3485C15.886 9.58731 16.9179 9.15944 17.994 9.15905ZM6.002 11.089C5.43762 11.089 4.89635 11.3132 4.49728 11.7123C4.0982 12.1114 3.874 12.6527 3.874 13.217C3.874 13.7814 4.0982 14.3227 4.49728 14.7218C4.89635 15.1208 5.43762 15.345 6.002 15.345C6.56638 15.345 7.10765 15.1208 7.50672 14.7218C7.9058 14.3227 8.13 13.7814 8.13 13.217C8.13 12.6527 7.9058 12.1114 7.50672 11.7123C7.10765 11.3132 6.56638 11.089 6.002 11.089ZM17.994 11.089C17.4296 11.089 16.8884 11.3132 16.4893 11.7123C16.0902 12.1114 15.866 12.6527 15.866 13.217C15.866 13.7814 16.0902 14.3227 16.4893 14.7218C16.8884 15.1208 17.4296 15.345 17.994 15.345C18.5584 15.345 19.0996 15.1208 19.4987 14.7218C19.8978 14.3227 20.122 13.7814 20.122 13.217C20.122 12.6527 19.8978 12.1114 19.4987 11.7123C19.0996 11.3132 18.5584 11.089 17.994 11.089Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+
+              <div>
+                <a
+                  class="group"
+                  href="https://Facebook.com/"
+                  target="_blank"
+                >
+                  <svg
+                    class="fill-gold-solid transition-colors duration-300 group-hover:fill-gold-light"
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 10H16V13H13V20H10V13H7V10H10V8.745C10 7.556 10.374 6.054 11.118 5.233C11.862 4.41 12.791 4 13.904 4H16V7H13.9C13.402 7 13 7.402 13 7.899V10Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h4 class="text-2xl">Zarezerwuj stolik</h4>
+            <div class="mt-6">
+              <p>
+                możesz to zrobić w prosty sposób wypełniając nasz
+                <a
+                  class="text-gold-solid underline transition-colors duration-300 hover:text-gold-light"
+                  href="#"
+                  >formularz&nbsp;online</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="h-px bg-black"></div>
+        <div
+          class="flex flex-col justify-between pt-8 pb-12 text-xxs md:flex-row"
+        >
+          <div>
+            <p>
+              COPYRIGHT &copy;&nbsp;<span id="year"></span
+              >&nbsp;FARINA
+            </p>
+          </div>
+          <div
+            class="my-4 flex basis-1/2 flex-col justify-between gap-4 sm:flex-row md:my-0"
+          >
+            <a
+              class="relative after:absolute after:block after:h-px after:w-0 after:bg-black after:transition-all after:duration-300 after:content-[''] after:hover:w-full"
+              href="#"
+              >POLITYKA PRYWATNOŚCI</a
+            ><a
+              class="relative after:absolute after:block after:h-px after:w-0 after:bg-black after:transition-all after:duration-300 after:content-[''] after:hover:w-full"
+              href="#"
+              >POLITYKA FIRMY</a
+            ><a
+              class="relative after:absolute after:block after:h-px after:w-0 after:bg-black after:transition-all after:duration-300 after:content-[''] after:hover:w-full"
+              href="#"
+              >POLITYKA COOKIES</a
+            >
+          </div>
+          <div>
+            <p>
+              designed by
+              <a
+                class="underline"
+                href="https://mocio.co"
+                target="_blank"
+                >mocio.co</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="scripts/blueimp-gallery.min.js"></script>
+  <script src="scripts/main.js"></script>
+</html>

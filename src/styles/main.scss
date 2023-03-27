@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Calendas Plus";
+  src: url("../fonts/Calendas_Plus.otf");
+  src: url("../fonts/Calendas_Plus.otf") format("woff"),
+    url("../fonts/Calendas_Plus.otf") format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Calendas Plus Bold";
+  src: url("../fonts/Calendas_Plus_Bold.otf");
+  src: url("../fonts/Calendas_Plus_Bold.otf") format("woff"),
+    url("../fonts/Calendas_Plus_Bold.otf") format("opentype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Calendas Plus Italic";
+  src: url("../fonts/Calendas_Plus_Italic.otf");
+  src: url("../fonts/Calendas_Plus_Italic.otf") format("woff"),
+    url("../fonts/Calendas_Plus_Italic.otf") format("opentype");
+  font-style: italic;
+}
+
+@layer base {
+  html {
+    font-family: Calendas Plus, sans-serif;
+  }
+}
+
 @import "button";
 @import "effects";
 @import "menu";
