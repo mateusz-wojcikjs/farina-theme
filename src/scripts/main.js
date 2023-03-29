@@ -237,22 +237,49 @@ lazyVideos.forEach((video) => {
 });
 
 const container = document.getElementById("container");
+const containerMiddleTop = document.getElementById(
+  "container-middle-top"
+);
+const backgroundTop = document.getElementById("background");
+const backgroundMiddleTop = document.getElementById(
+  "background-middle-top"
+);
+
+const updateBackgroundPosition = (container, background) => {
+  if (window.innerWidth >= 1024) {
+    background.style.width =
+      container.offsetLeft + container.offsetWidth / 2 + 15 + "px";
+  } else {
+    background.style.width = "100%";
+  }
+};
 
 if (container) {
-  const updateBackgroundPosition = (container) => {
-    const background = document.getElementById("background");
-    if (window.innerWidth >= 1024) {
-      background.style.width =
-        container.offsetLeft + container.offsetWidth / 2 + 15 + "px";
-    } else {
-      background.style.width = "100%";
-    }
-  };
-
   window.addEventListener("resize", () =>
-    updateBackgroundPosition(container)
+    updateBackgroundPosition(container, backgroundTop)
   );
   document.addEventListener("DOMContentLoaded", () =>
-    updateBackgroundPosition(container)
+    updateBackgroundPosition(container, backgroundTop)
   );
+}
+if (backgroundMiddleTop) {
+  window.addEventListener("resize", () =>
+    updateBackgroundPosition(containerMiddleTop, backgroundMiddleTop)
+  );
+  document.addEventListener("DOMContentLoaded", () =>
+    updateBackgroundPosition(containerMiddleTop, backgroundMiddleTop)
+  );
+}
+
+const hideOnScroll = document.querySelector(".hide-on-scroll");
+
+if (hideOnScroll) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= nav.getBoundingClientRect().height) {
+      hideOnScroll.classList.add("hide");
+    }
+    if (window.scrollY < nav.getBoundingClientRect().height) {
+      hideOnScroll.classList.remove("hide");
+    }
+  });
 }

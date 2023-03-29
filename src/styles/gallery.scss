@@ -6,11 +6,20 @@
 
 .gallery {
   &__tabs {
-    @apply container max-w-2xl gap-14;
+    @apply container;
     display: flex;
-    margin: 0 auto 2.5rem;
+    padding-bottom: 2.5rem;
     justify-content: center;
     align-items: center;
+
+    &--sticky {
+      position: sticky;
+      top: 88px;
+      z-index: 10;
+      width: 100%;
+      background-color: #fff;
+      padding-top: 3rem;
+    }
   }
 
   &__tab {

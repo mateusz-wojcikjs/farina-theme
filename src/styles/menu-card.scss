@@ -1,0 +1,54 @@
+.menu-card {
+  //padding: 0 6rem;
+  @apply md:px-8 lg:px-24;
+
+  &__group {
+    h2 {
+      font-size: 1rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  &__items {
+    margin-top: 1.5rem;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 50px 50px;
+    grid-template-areas:
+      "name unit price"
+      "ingredients . .";
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__item-title {
+    grid-area: name;
+    font-size: 1.375rem;
+  }
+
+  &__item-ingredients {
+    grid-area: ingredients;
+    font-style: italic;
+  }
+
+  &__item-price {
+    grid-area: price;
+    font-size: 1.375rem;
+    font-weight: 700;
+  }
+}
+
+.menu-navigation {
+  @apply flex md:block;
+  li {
+    @apply whitespace-nowrap;
+    font-size: 0.875rem;
+
+    &:not(:last-child) {
+      @apply mr-6 md:mr-0 md:mb-4;
+    }
+  }
+}

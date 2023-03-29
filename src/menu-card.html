@@ -14,9 +14,9 @@
       name="viewport"
     />
     <!-- Primary Meta Tags -->
-    <title>Farina — Zobacz galerię — Restauracja w Krakowie</title>
+    <title>Farina — Pani Monika — Restauracja w Krakowie</title>
     <meta
-      content="Farina — Zobacz galerię — Restauracja w Krakowie"
+      content="Farina — Karta Menu — Restauracja w Krakowie"
       name="title"
     />
     <meta
@@ -31,7 +31,7 @@
       property="og:url"
     />
     <meta
-      content="Farina — Zobacz galerię — Restauracja w Krakowie"
+      content="Farina — Karta Menu — Restauracja w Krakowie"
       property="og:title"
     />
     <meta
@@ -47,7 +47,7 @@
       property="twitter:url"
     />
     <meta
-      content="Farina — Zobacz galerię — Restauracja w Krakowie"
+      content="Farina — Karta Menu — Restauracja w Krakowie"
       property="twitter:title"
     />
     <meta
@@ -56,7 +56,7 @@
     />
     <meta content="" property="twitter:image" />
   </head>
-  <body>
+  <body class="body-menu-backgrounds">
     <nav class="sticky top-0 z-50 z-10 bg-white" id="navigation">
       <div
         class="container flex h-[88px] flex-wrap items-center justify-between"
@@ -291,130 +291,481 @@
       </div>
     </div>
 
-    <!--    Gallery -->
-    <header class="hide-on-scroll container">
-      <div class="mt-16 mb-12">
-        <h1 class="text-center text-3xl">GALERIA</h1>
-      </div>
-      <img
-        alt="Ozdobny separator treści"
-        class="mx-auto"
-        src="assets/separator.svg"
-      />
-    </header>
-    <section>
-      <div class="gallery">
-        <div class="gallery__tabs gallery__tabs--sticky">
-          <div class="tabs-scroll">
-            <div class="m-0 flex flex-nowrap gap-6 pb-1 lg:gap-14">
-              <button
-                class="gallery__tab gallery__tab--active"
-                data-gallery="all"
-              >
-                Wszystkie
-              </button>
-              <button class="gallery__tab" data-gallery="food">
-                Dania
-              </button>
-              <button class="gallery__tab" data-gallery="restaurants">
-                Wnętrze
-              </button>
-              <button class="gallery__tab" data-gallery="kitchen">
-                Kuchnia
-              </button>
-              <button class="gallery__tab" data-gallery="kitchen">
-                Kuchnia
-              </button>
-              <button class="gallery__tab" data-gallery="kitchen">
-                Kuchnia
-              </button>
+    <main class="relative">
+      <div class="container">
+        <div
+          class="mx-auto hidden justify-end gap-8 md:flex lg:w-[85%]"
+        >
+          <button
+            class="button button--primary mt-10"
+            data-modal="open-modal"
+            href="/"
+          >
+            <span>Zarezerwuj stolik</span>
+          </button>
+        </div>
+        <div class="mx-auto gap-8 md:mt-6 md:flex lg:w-[85%]">
+          <div
+            class="top-[calc(8rem+72px)] h-fit basis-1/6 bg-white p-6 text-center uppercase md:sticky"
+          >
+            <span class="hidden font-bold md:inline"
+              >MENU A'LA&nbsp;CARTE</span
+            >
+            <div
+              class="separator-line mx-auto hidden bg-gold-solid md:block"
+            ></div>
+            <div class="tabs-scroll md:block">
+              <ul class="menu-navigation">
+                <li><a href="./menu-card.html">Menu</a></li>
+                <li><a href="./menu-card.html">Menu sezonowe</a></li>
+                <li><a href="./menu-card.html">Desery</a></li>
+                <li><a href="./menu-card.html">Karta Koktaili</a></li>
+                <li><a href="./menu-card.html">Karta Win</a></li>
+                <li>
+                  <a href="./menu-card.html">Menu dla Dzieci</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full bg-white md:basis-5/6">
+            <div class="mb-12 md:mt-16">
+              <h1 class="text-center text-3xl font-bold">MENU</h1>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card__group">
+                <img
+                  alt="Ozdobny separator treści"
+                  class="mx-auto mb-6"
+                  src="assets/separator.svg"
+                />
+                <h2>Na początek</h2>
+                <ul class="menu-card__items">
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <p class="menu-card__item-ingredients">
+                      ostryga, wódka, pieprz, cytryna
+                    </p>
+                    <span class="menu-card__item-unit">100g</span
+                    ><span class="menu-card__item-price">35,-</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu-card__group">
+                <img
+                  alt="Ozdobny separator treści"
+                  class="mx-auto mb-6"
+                  src="assets/separator.svg"
+                />
+                <h2>Na początek</h2>
+                <ul class="menu-card__items">
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <p class="menu-card__item-ingredients">
+                      ostryga, wódka, pieprz, cytryna
+                    </p>
+                    <span class="menu-card__item-unit">100g</span
+                    ><span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <p class="menu-card__item-ingredients">
+                      ostryga, wódka, pieprz, cytryna
+                    </p>
+                    <span class="menu-card__item-unit">100g</span
+                    ><span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <p class="menu-card__item-ingredients">
+                      ostryga, wódka, pieprz, cytryna
+                    </p>
+                    <span class="menu-card__item-unit">100g</span
+                    ><span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <p class="menu-card__item-ingredients">
+                      ostryga, wódka, pieprz, cytryna
+                    </p>
+                    <span class="menu-card__item-unit">100g</span
+                    ><span class="menu-card__item-price">35,-</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu-card__group">
+                <img
+                  alt="Ozdobny separator treści"
+                  class="mx-auto mb-6"
+                  src="assets/separator.svg"
+                />
+                <h2>Na początek</h2>
+                <ul class="menu-card__items">
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <span class="menu-card__item-unit">100g</span
+                    ><span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <p class="menu-card__item-ingredients">
+                      ostryga, wódka, pieprz, cytryna
+                    </p>
+                    <span class="menu-card__item-unit">100g</span
+                    ><span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <p class="menu-card__item-ingredients">
+                      ostryga, wódka, pieprz, cytryna
+                    </p>
+                    <span class="menu-card__item-unit">100g</span
+                    ><span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <p class="menu-card__item-ingredients">
+                      ostryga, wódka, pieprz, cytryna
+                    </p>
+                    <span class="menu-card__item-unit">100g</span
+                    ><span class="menu-card__item-price">35,-</span>
+                  </li>
+                  <li class="menu-card__item">
+                    <h3 class="menu-card__item-title">
+                      Wódka z ostrygą
+                    </h3>
+                    <p class="menu-card__item-ingredients">
+                      ostryga, wódka, pieprz, cytryna
+                    </p>
+                    <span class="menu-card__item-unit">100g</span
+                    ><span class="menu-card__item-price">35,-</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-        <div class="gallery__container" id="gallery">
-          <a class="gallery__item" href="assets/gallery-1.png">
-            <img alt="" src="assets/gallery-1.png" />
-          </a>
-          <a
-            class="gallery__item"
-            data-tab="food"
-            href="assets/gallery-1.png"
-          >
-            <img alt="" src="assets/gallery-1.png" />
-          </a>
-          <a
-            class="gallery__item"
-            data-tab="restaurant"
-            href="assets/gallery-1.png"
-          >
-            <img alt="" src="assets/gallery-1.png" />
-          </a>
-          <a
-            class="gallery__item"
-            data-tab="restaurant"
-            href="assets/gallery-1.png"
-          >
-            <img alt="" src="assets/gallery-1.png" />
-          </a>
-          <a
-            class="gallery__item"
-            data-tab="restaurant"
-            href="assets/gallery-1.png"
-          >
-            <img alt="" src="assets/gallery-1.png" />
-          </a>
-          <a
-            class="gallery__item"
-            data-tab="kitchen"
-            href="assets/gallery-1.png"
-          >
-            <img alt="" src="assets/gallery-1.png" />
-          </a>
+      </div>
+
+      <!--    Background on the top -->
+
+      <div
+        class="absolute top-0 -z-10 hidden h-full h-auto w-full flex-col overflow-hidden md:flex md:h-[960px] md:flex-row md:items-center"
+      >
+        <div
+          class="mb-12 flex h-full h-[960px] pl-0 pr-4 md:absolute md:mb-0 md:h-full md:px-0 md:pr-8"
+          id="background"
+        >
+          <img
+            alt=""
+            class="reveal-left h-[66vh] w-full object-cover md:h-full 2xl:max-h-[960px]"
+            src="assets/menu-bg-1.png"
+          />
+        </div>
+
+        <div
+          class="container -mt-48 flex md:absolute md:left-1/2 md:mt-0 md:-translate-x-1/2 md:justify-end"
+          id="container"
+        >
+          <div
+            class="reveal-right -ml-8 mr-4 p-0 md:mx-0 md:mb-0 md:basis-1/3 lg:max-w-fit lg:basis-1/3 lg:p-16"
+          ></div>
         </div>
       </div>
 
-      <div class="mt-14 flex justify-center">
-        <a class="link" href="/"><span>WIĘCEJ ZDJĘĆ</span></a>
+      <!--    Small background -->
+
+      <img
+        alt=""
+        class="reveal absolute left-0 top-[calc(960px+200px)] -z-10 hidden max-h-[380px] w-full max-w-[33vw] object-cover xl:block"
+        src="assets/menu-bg-2.png"
+      />
+
+      <!--    Background in the middle top -->
+
+      <div
+        class="absolute top-[calc(960px+400px+380px)] -z-10 hidden h-full h-auto w-full flex-col justify-end overflow-hidden md:flex md:h-[960px] md:flex-row md:items-center"
+      >
+        <div
+          class="mb-12 flex h-full h-[762px] md:absolute md:mb-0 md:h-full"
+          id="background-middle-top"
+        >
+          <img
+            alt=""
+            class="reveal-right h-[66vh] w-full object-cover md:h-full 2xl:max-h-[960px]"
+            src="assets/menu-bg-3.png"
+          />
+        </div>
+
+        <div
+          class="container -mt-48 flex md:absolute md:left-1/2 md:mt-0 md:-translate-x-1/2 md:justify-end"
+          id="container-middle-top"
+        >
+          <div
+            class="reveal-right -ml-8 mr-4 p-0 md:mx-0 md:mb-0 md:basis-1/3 lg:max-w-fit lg:basis-1/3 lg:p-16"
+          ></div>
+        </div>
       </div>
-    </section>
-    <!--  Gallery Lightbox-->
-    <div
-      aria-label="image gallery"
-      aria-modal="true"
-      class="blueimp-gallery blueimp-gallery-controls"
-      id="blueimp-gallery"
-      role="dialog"
-    >
-      <div aria-live="polite" class="slides"></div>
-      <h3 class="title"></h3>
-      <a
-        aria-controls="blueimp-gallery"
-        aria-keyshortcuts="ArrowLeft"
-        aria-label="previous slide"
-        class="prev"
-      ></a>
-      <a
-        aria-controls="blueimp-gallery"
-        aria-keyshortcuts="ArrowRight"
-        aria-label="next slide"
-        class="next"
-      ></a>
-      <a
-        aria-controls="blueimp-gallery"
-        aria-keyshortcuts="Escape"
-        aria-label="close"
-        class="close"
-      ></a>
-      <a
-        aria-controls="blueimp-gallery"
-        aria-keyshortcuts="Space"
-        aria-label="play slideshow"
-        aria-pressed="false"
-        class="play-pause"
-        role="button"
-      ></a>
-      <ol class="indicator"></ol>
-    </div>
+
+      <!--    Image at the bottom -->
+
+      <img
+        alt=""
+        class="reveal absolute left-0 bottom-4 -z-10 hidden max-h-[380px] w-full max-w-[25vw] object-cover xl:block"
+        src="assets/homar.svg"
+      />
+    </main>
 
     <!--    footer start-->
     <footer class="pt-8 md:pt-15">

@@ -4,11 +4,57 @@
     <meta charset="UTF-8" />
     <link href="styles/main.scss" rel="stylesheet" />
     <link href="styles/blueimp-gallery.min.css" rel="stylesheet" />
+    <link
+      href="assets/favicon.png"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
     <meta
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
       name="viewport"
     />
-    <title>Home page</title>
+    <!-- Primary Meta Tags -->
+    <title>Farina — Strona Główna — Restauracja w Krakowie</title>
+    <meta
+      content="Farina — Strona Główna — Restauracja w Krakowie"
+      name="title"
+    />
+    <meta
+      content="Farina — Długi opis — restauracja na krakowskim rynku z kuchnią śródziemnomorską prowadzona przez Panią Monikę Turasiewicz."
+      name="description"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta content="website" property="og:type" />
+    <meta
+      content="https://farina-theme.netlify.app/"
+      property="og:url"
+    />
+    <meta
+      content="Farina — Strona Główna — Restauracja w Krakowie"
+      property="og:title"
+    />
+    <meta
+      content="Farina — Długi opis — restauracja na krakowskim rynku z kuchnią śródziemnomorską prowadzona przez Panią Monikę Turasiewicz."
+      property="og:description"
+    />
+    <meta content="" property="og:image" />
+
+    <!-- Twitter -->
+    <meta content="summary_large_image" property="twitter:card" />
+    <meta
+      content="https://farina-theme.netlify.app/assets/hero-frame-4da0c5ae.png"
+      property="twitter:url"
+    />
+    <meta
+      content="Farina — Strona Główna — Restauracja w Krakowie"
+      property="twitter:title"
+    />
+    <meta
+      content="Farina — Długi opis — restauracja na krakowskim rynku z kuchnią śródziemnomorską prowadzona przez Panią Monikę Turasiewicz."
+      property="twitter:description"
+    />
+    <meta content="" property="twitter:image" />
   </head>
   <body>
     <nav class="sticky top-0 z-50 z-10 bg-white" id="navigation">
@@ -64,14 +110,13 @@
                 </button>
 
                 <ul class="mt-10 basis-1/2 text-[2rem] md:mt-0">
-                  <li><a href="/pani-monika.html">O nas</a></li>
+                  <li><a href="/menu-card.html">Menu</a></li>
                   <li><a href="/menu.html">Menu sezonowe</a></li>
                   <li><a href="/galeria.html">Galeria</a></li>
-                  <li><a href="/">Galeria</a></li>
-                  <li><a href="/">Menu sezonowe</a></li>
-                  <li><a href="/">Galeria</a></li>
-                  <li><a href="/">Menu sezonowe</a></li>
-                  <li><a href="/">Galeria</a></li>
+                  <li>
+                    <a href="/contact.html">Spacer wirtualny</a>
+                  </li>
+                  <li><a href="/pani-monika.html">O nas</a></li>
                 </ul>
 
                 <div
@@ -547,21 +592,31 @@
     <section>
       <div class="gallery">
         <div class="gallery__tabs">
-          <button
-            class="gallery__tab gallery__tab--active"
-            data-gallery="all"
-          >
-            Wszystkie
-          </button>
-          <button class="gallery__tab" data-gallery="food">
-            Dania
-          </button>
-          <button class="gallery__tab" data-gallery="restaurants">
-            Wnętrze
-          </button>
-          <button class="gallery__tab" data-gallery="kitchen">
-            Kuchnia
-          </button>
+          <div class="tabs-scroll">
+            <div class="m-0 flex flex-nowrap gap-6 pb-1 lg:gap-14">
+              <button
+                class="gallery__tab gallery__tab--active"
+                data-gallery="all"
+              >
+                Wszystkie
+              </button>
+              <button class="gallery__tab" data-gallery="food">
+                Dania
+              </button>
+              <button class="gallery__tab" data-gallery="restaurants">
+                Wnętrze
+              </button>
+              <button class="gallery__tab" data-gallery="kitchen">
+                Kuchnia
+              </button>
+              <button class="gallery__tab" data-gallery="kitchen">
+                Kuchnia
+              </button>
+              <button class="gallery__tab" data-gallery="kitchen">
+                Kuchnia
+              </button>
+            </div>
+          </div>
         </div>
         <div class="gallery__container" id="gallery">
           <a class="gallery__item" href="assets/gallery-1.png">
@@ -917,6 +972,6 @@
       </div>
     </footer>
   </body>
-  <script src="scripts/blueimp-gallery.min.js"></script>
-  <script src="scripts/main.js"></script>
+  <script src="scripts/blueimp-gallery.min.js" type="module"></script>
+  <script src="scripts/main.js" type="module"></script>
 </html>
