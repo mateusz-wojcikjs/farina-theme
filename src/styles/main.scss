@@ -29,6 +29,7 @@
 @layer base {
   html {
     font-family: Calendas Plus, sans-serif;
+    @apply scroll-smooth;
   }
 }
 

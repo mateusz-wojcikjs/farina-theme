@@ -79,8 +79,10 @@ closeButton.innerHTML =
 closeButton.classList.add(
   "close-button",
   "absolute",
-  "top-0",
-  "right-0",
+  "md:top-0",
+  "md:right-0",
+  "top-12",
+  "right-4",
   "m-4",
   "text-gray-700",
   "hover:text-red-500"
@@ -136,35 +138,80 @@ function closeModal() {
 const gallery = document.getElementById("gallery");
 const tabs = document.querySelectorAll(".gallery__tab");
 const items = document.querySelectorAll(".gallery__item");
-const ACCESS_KEY = "3hlUYe0FCDeSCrtTDhdlDlzL7bhdkwEb2io9Vmm0-hc";
-const API_URL = "https://api.unsplash.com/";
+const loadMoreButton = document.getElementById("loadMore");
 
 if (gallery) {
+  const perPage = 6;
+  let images = [];
+  let totalCount = 0;
+  let currentPage = 1;
+  let offset = 0;
+
+  const spinner = document.createElement("span");
   const getImagesByCategory = async (category) => {
     try {
-      const res = await fetch(`
-      ${API_URL}/search/photos?query=${category}&client_id=${ACCESS_KEY}&per_page=6`);
+      const res = await fetch(
+        `https://farina.com.pl/new2023/wp-json/gallery/v1/category/${category}`
+      );
+      const { gallery } = await res.json();
+      const [{ images: data }] = gallery;
+      const images = data;
 
-      const data = await res.json();
-
-      return await data.results.map((img) => {
+      return images.map((img) => {
         return {
           id: img.id,
-          description: img.alt_description,
-          urls: img.urls
+          alt: img.alt,
+          title: img.title,
+          urls: img.sizes
         };
       });
-
-      // return images;
     } catch (e) {
       console.log(e);
     }
   };
 
+  const render = () => {
+    const offsetImages = images.slice(offset, perPage * currentPage);
+
+    if (offsetImages.length > 0) {
+      offsetImages.forEach((img) => {
+        const galleryItem = document.createElement("a");
+        galleryItem.classList.add("gallery__item");
+        galleryItem.href = img.urls["2048x2048"];
+        const galleryImg = document.createElement("img");
+        galleryImg.src = img.urls.large;
+        galleryImg.alt = img?.alt || img.title;
+        galleryItem.append(galleryImg);
+        gallery.append(galleryItem);
+      });
+    }
+    spinner.remove();
+  };
+
+  loadMoreButton.addEventListener("click", () => {
+    currentPage++;
+    offset = offset + perPage;
+
+    const limit = Math.ceil(totalCount / 6);
+    if (limit > currentPage) {
+      loadMoreButton.style.display = "block";
+    }
+
+    if (limit === currentPage) {
+      loadMoreButton.style.display = "none";
+    }
+    render();
+  });
+
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", async () => {
+      totalCount = 0;
+      currentPage = 1;
+      offset = 0;
+      images = [];
+
       gallery.innerHTML = "";
-      const spinner = document.createElement("span");
+
       spinner.classList.add("spinner");
       gallery.append(spinner);
 
@@ -178,24 +225,15 @@ if (gallery) {
       // Show items with matching data-tab attribute
       const selectedTab = tab.getAttribute("data-gallery");
 
-      const images = await getImagesByCategory(selectedTab);
+      images = await getImagesByCategory(selectedTab);
+      totalCount = images.length;
 
-      if (images.length > 0) {
-        images.forEach((img) => {
-          const galleryItem = document.createElement("a");
-          galleryItem.classList.add("gallery__item");
-          galleryItem.href = img.urls.regular;
-          const galleryImg = document.createElement("img");
-          galleryImg.src = img.urls.small;
-          // galleryImg.alt = img.description;
-
-          galleryItem.append(galleryImg);
-          gallery.append(galleryItem);
-          console.log(galleryItem);
-        });
+      const limit = Math.ceil(totalCount / 6);
+      if (limit > currentPage) {
+        loadMoreButton.style.display = "block";
       }
 
-      spinner.remove();
+      render();
     });
   });
 
@@ -206,7 +244,10 @@ if (gallery) {
     const links = this.getElementsByTagName("a");
     blueimp.Gallery(links, options);
   };
+
+  tabs[0].click();
 }
+
 const lazyVideos = document.querySelectorAll(".lazy-video");
 
 const options = {
@@ -216,7 +257,6 @@ const options = {
 
 const callback = (entries, observer) => {
   entries.forEach((entry) => {
-    console.log(entry);
     if (entry.isIntersecting) {
       const video = entry.target;
       const src = video.getAttribute("data-src");

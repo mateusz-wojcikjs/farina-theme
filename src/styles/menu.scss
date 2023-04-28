@@ -44,7 +44,7 @@
 }
 
 .menu {
-  @apply invisible fixed left-0 top-[88px] -z-20 h-[calc(100vh-88px)] w-full bg-black/50 opacity-0 duration-300;
+  @apply invisible fixed left-0 top-[88px] -z-20 h-[calc(100vh-88px)] w-full bg-black/50 opacity-0 duration-300 md:top-[88px];
 
   &__container {
     @apply -translate-y-full transition-all duration-300;
@@ -89,7 +89,8 @@
   .menu {
     @apply visible translate-y-0 opacity-100;
     &__container {
-      @apply translate-y-0;
+      @apply translate-y-0 overflow-auto;
+      max-height: 100vh;
     }
 
     ul {
@@ -103,5 +104,6 @@
 }
 
 .modal {
-  @apply container fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform bg-white px-12 md:px-24 py-16 shadow-lg lg:max-w-4xl;
+  @apply container fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform overflow-y-auto bg-white px-3 pb-16 pt-24 shadow-lg md:px-12 md:px-24 md:pt-16 lg:max-w-4xl;
+  max-height: 100vh;
 }

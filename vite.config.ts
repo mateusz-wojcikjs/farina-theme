@@ -33,6 +33,13 @@ const entries = {
 export default defineConfig({
   root: join(__dirname, "src"),
   assetsInclude: ["**/*.mp4"],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        includePaths: ["node_modules"]
+      }
+    }
+  },
   build: {
     assetsInlineLimit: 20000,
     outDir: join(__dirname, "dist"),

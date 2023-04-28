@@ -70,11 +70,11 @@
         <div
           class="after:content[''] relative order-3 flex w-[18.5rem] items-center gap-8 after:absolute after:left-1/2 after:hidden after:h-full after:w-px after:bg-gold-solid md:order-none md:after:block"
         >
-          <div class="hidden basis-1/2 md:block">
-            Nasze wyróżnienia
+          <div class="hidden basis-1/2 text-xxs md:block">
+            NASZE WYRÓŻNIENIA
           </div>
           <div
-            class="flex gap-0.5 text-xxs md:basis-1/2 md:flex-col md:gap-0"
+            class="flex gap-4 text-xxs md:basis-1/2 md:flex-col md:gap-0 md:gap-0.5"
           >
             <div>Wine spectator 2019</div>
             <div>Michelin 2019</div>
@@ -94,8 +94,15 @@
           <div
             class="after:content[''] relative hidden w-14 after:absolute after:left-[calc(50%-3px)] after:h-full after:w-px after:bg-gold-solid md:flex"
           >
-            <a class="w-8" href="#pl">PL</a
-            ><a class="w-8 text-end" href="#EN">EN</a>
+            <a
+              class="switcher-link w-8 duration-300 hover:text-gold-solid"
+              href="#pl"
+              >PL</a
+            ><a
+              class="switcher-link w-8 text-end duration-300 hover:text-gold-solid"
+              href="#EN"
+              >EN</a
+            >
           </div>
           <button class="hamburger" id="hamburger">
             <span class="bar bar1"></span>
@@ -106,7 +113,7 @@
           <div class="menu" id="menu">
             <div class="menu__container bg-white pb-24 pt-4 md:py-24">
               <div
-                class="container flex flex-col items-start md:flex-row md:items-center"
+                class="container flex flex-col items-start pb-16 md:flex-row md:items-center"
               >
                 <button
                   class="button button--primary md:hidden"
@@ -163,9 +170,13 @@
 
     <!--    Hero header -->
     <header class="overlay relative">
-        <img src="assets/hero-frame.png" class="w-full object-cover object-center h-full max-h-[calc(100vh-166px)]" alt="">
+      <img
+        alt=""
+        class="h-[calc(100vh-166px)] w-full object-cover object-center md:h-full md:max-h-[calc(100vh-166px)]"
+        src="assets/hero-frame.png"
+      />
       <div
-        class="container absolute left-1/2 top-10 z-10 flex -translate-x-1/2 justify-end"
+        class="container fixed left-1/2 top-32 z-40 flex -translate-x-1/2 justify-end"
       >
         <button
           class="button button--primary"
@@ -238,7 +249,10 @@
       id="modal-background"
     ></div>
 
-    <div class="modal hidden transition-all" id="modal">
+    <div
+      class="modal hidden overflow-x-hidden transition-all"
+      id="modal"
+    >
       <div class="loader" id="loader">
         <span class="spinner"></span>
       </div>
@@ -266,7 +280,7 @@
                 id="date"
                 placeholder="dd/mm/rrrr"
                 required
-                type="text"
+                type="date"
               />
             </div>
             <div class="col-span-full md:col-span-2">
@@ -275,13 +289,21 @@
                 for="time"
                 >Godzina</label
               >
-              <input
-                class="text-gray-700 focus:shadow-outline w-full border px-3 py-2 leading-tight focus:outline-none"
+              <select
+                class="text-gray-700 focus:shadow-outline w-full appearance-none border bg-white px-3 py-2 leading-tight focus:outline-none"
                 id="time"
                 placeholder="Podaj godzinę rezerwacji"
                 required
                 type="text"
-              />
+              >
+                <option value="">--Please choose an option--</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="hamster">Hamster</option>
+                <option value="parrot">Parrot</option>
+                <option value="spider">Spider</option>
+                <option value="goldfish">Goldfish</option>
+              </select>
             </div>
             <div class="col-span-full md:col-span-2">
               <label
@@ -353,10 +375,10 @@
               ></textarea>
             </div>
             <div
-              class="col-span-4 md:col-span-2 col-start-2 md:col-start-3 justify-self-center pt-4"
+              class="col-span-4 col-start-2 justify-self-center pt-4 md:col-span-2 md:col-start-3"
             >
               <button
-                class="button button--primary"
+                class="button button--primary flex w-full justify-center md:w-auto"
                 id="submit-form"
                 type="submit"
               >
@@ -531,7 +553,7 @@
     </div>
 
     <!-- Wines section -->
-    <section class="py-32">
+    <section class="pb-0 pt-32">
       <div
         class="container flex flex-col-reverse items-center gap-8 md:flex-row"
       >
@@ -740,8 +762,8 @@
 
     <!-- Banner -->
     <div
-      class="banner h-[720px] w-full bg-cover bg-fixed bg-center bg-no-repeat"
-      style="background-image: url('assets/full-w-bg.png')"
+      class="h-[40vh] w-full bg-cover bg-center bg-no-repeat md:h-[720px] md:bg-fixed"
+      id="banner"
     ></div>
 
     <!-- Awards section -->
@@ -916,11 +938,12 @@
             <div class="mt-6">
               <p>
                 możesz to zrobić w prosty sposób wypełniając nasz
-                <a
+                <button
                   class="text-gold-solid underline transition-colors duration-300 hover:text-gold-light"
-                  href="#"
-                  >formularz&nbsp;online</a
+                  id="footer-form-button"
                 >
+                  formularz&nbsp;online
+                </button>
               </p>
             </div>
           </div>
