@@ -4,6 +4,25 @@ const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
 yearElement.innerText = currentYear.toString();
 
+const dateInput = document.getElementById("date");
+
+// Disable Mondays in the calendar
+const closeAlertBtn = document.getElementById("closeAlert");
+const bookAlert = document.getElementById("bookAlert");
+
+// Disable Mondays in the calendar
+dateInput.addEventListener("input", (e) => {
+  const selectedDate = new Date(e.target.value);
+  if (selectedDate.getDay() === 1) {
+    bookAlert.classList.remove("hidden");
+    e.target.value = "";
+  }
+});
+
+closeAlertBtn.addEventListener("click", (e) => {
+  bookAlert.classList.add("hidden");
+});
+
 const containers = [
   ...document.querySelectorAll(".reveal"),
   ...document.querySelectorAll(".reveal-left"),
@@ -138,7 +157,7 @@ function closeModal() {
 const gallery = document.getElementById("gallery");
 const tabs = document.querySelectorAll(".gallery__tab");
 const items = document.querySelectorAll(".gallery__item");
-const loadMoreButton = document.getElementById("loadMore");
+const loadMoreButton = document.getElementById("loadMoreButton");
 
 if (gallery) {
   const perPage = 6;

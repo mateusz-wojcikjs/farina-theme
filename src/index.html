@@ -267,6 +267,27 @@
           src="assets/separator.svg"
         />
 
+        <div
+          class="absolute z-10 flex hidden h-full w-full items-center justify-center"
+          id="bookAlert"
+          role="alert"
+          style="background: rgba(0, 0, 0, 0.3)"
+        >
+          <div
+            class="flex w-4/5 flex-col items-center justify-center rounded-b border-t-4 border-gold-gradientFrom bg-white px-8 py-6 shadow-md md:w-1/2"
+          >
+            <div class="mb-6">
+              <p class="text-center text-xl font-bold">
+                W poniedziałki mamy nieczynne. Prosimy wybrać inny
+                dzień.
+              </p>
+            </div>
+            <button class="button button--primary" id="closeAlert">
+              <span>Rozumiem</span>
+            </button>
+          </div>
+        </div>
+
         <form id="modal-form">
           <div class="grid grid-cols-6 gap-x-4 gap-y-6">
             <div class="col-span-full md:col-span-2">
@@ -424,7 +445,9 @@
                 <b>Zapraszam do mojego kulinarnego świata!</b>
               </p>
             </div>
-            <a class="link" href="/"><span>CZYTAJ WIĘCEJ</span></a>
+            <a class="link" href="/" id=""
+              ><span>CZYTAJ WIĘCEJ</span></a
+            >
           </div>
         </div>
       </div>
